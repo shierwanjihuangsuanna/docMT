@@ -19,6 +19,6 @@ if __name__ == '__main__':
     messages = [
         {"role": "user", "content": "Who are you?"},
     ]
-    pipe = pipeline("text-generation", model=model)
+    pipe = pipeline("text-generation", model=model,tokenizer=tokenizer)
 
     print(pipe(messages))
