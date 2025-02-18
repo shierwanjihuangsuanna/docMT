@@ -9,6 +9,9 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     # Load model directly
-    tokenizer = AutoTokenizer.from_pretrained("deepseek-ai/DeepSeek-R1-Distill-Llama-8B")
-    model = AutoModelForCausalLM.from_pretrained("deepseek-ai/DeepSeek-R1-Distill-Llama-8B")
+
+    checkpoint_path="./DeepSeek-R1-Distill-Llama-8B/"
+
+    tokenizer = AutoTokenizer.from_pretrained(checkpoint_path)
+    model = AutoModelForCausalLM.from_pretrained(checkpoint_path)
 
