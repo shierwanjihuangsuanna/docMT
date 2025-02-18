@@ -4,7 +4,7 @@
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
 
-from transformers import AutoTokenizer, AutoModelForCausalLM
+from transformers import AutoTokenizer, AutoModelForCausalLM,pipeline
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
@@ -15,3 +15,10 @@ if __name__ == '__main__':
     tokenizer = AutoTokenizer.from_pretrained(checkpoint_path)
     model = AutoModelForCausalLM.from_pretrained(checkpoint_path)
 
+
+    messages = [
+        {"role": "user", "content": "Who are you?"},
+    ]
+    pipe = pipeline("text-generation", model=model)
+
+    print(pipe(messages))
